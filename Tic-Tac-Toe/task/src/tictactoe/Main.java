@@ -6,18 +6,13 @@ import java.util.Scanner;
 
 public class Main {
 
-    static char win;
-    static int keepNumberX = 0;
-    static int keepNumberO = 0;
-    static int keepNumberSpace = 0;
-    static int count = 1;
+    static private char win;
+    static private int count = 1;
 
     public static void main(String[] args) {
 
         boolean loop = true;
         char player;
-
-        List<String> readXO = new ArrayList<>(9);
         String checkChar = "          ";
 
         Scanner input = new Scanner(System.in);
@@ -25,18 +20,12 @@ public class Main {
         char[] check = checkChar.toCharArray();
 
 
-
-
         System.out.println(checkChar);
 
         print_Output(checkChar); // printing out
 
         List<String> receive = coordinate();
-
-
-
         do {
-
             if (count % 2 == 0) {
                 player = 'O';
             } else {
@@ -56,9 +45,8 @@ public class Main {
             } else {
                 System.out.println("Coordinates should be from 1 to 3!");
             }
-            readXO.add(String.valueOf(player));
 
-            if(win == player){
+            if (win == player) {
                 loop = false;
             }
         } while (loop);
@@ -90,28 +78,6 @@ public class Main {
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /*
     @
     @
@@ -125,23 +91,23 @@ public class Main {
     //Checking Win Condition
     static public void condition_win(char[] select) {
 
-            if (select[0] == select[1] && select[1] == select[2]) {
-                win = select[1];
-            } else if (select[3] == select[4] && select[4] == select[5]) {
-                win = select[3];
-            } else if (select[6] == select[7] && select[7] == select[8]) {
-                win = select[6];
-            } else if (select[0] == select[4] && select[4] == select[8]) {
-                win = select[0];
-            } else if (select[2] == select[4] && select[4] == select[6]) {
-                win = select[2];
-            } else if (select[2] == select[5] && select[5] == select[8]) {
-                win = select[2];
-            } else if (select[1] == select[4] && select[4] == select[7]) {
-                win = select[1];
-            } else if (select[0] == select[3] && select[3] == select[6]) {
-                win = select[0];
-            }
+        if (select[0] == select[1] && select[1] == select[2]) {
+            win = select[1];
+        } else if (select[3] == select[4] && select[4] == select[5]) {
+            win = select[3];
+        } else if (select[6] == select[7] && select[7] == select[8]) {
+            win = select[6];
+        } else if (select[0] == select[4] && select[4] == select[8]) {
+            win = select[0];
+        } else if (select[2] == select[4] && select[4] == select[6]) {
+            win = select[2];
+        } else if (select[2] == select[5] && select[5] == select[8]) {
+            win = select[2];
+        } else if (select[1] == select[4] && select[4] == select[7]) {
+            win = select[1];
+        } else if (select[0] == select[3] && select[3] == select[6]) {
+            win = select[0];
+        }
 
     }
 
@@ -162,24 +128,24 @@ public class Main {
 
     }
 
-    //counting X and O
-    static public void countXO(String readXO) {
-        char[] check = readXO.toCharArray();
-        for (int i = 0; i < readXO.length(); i++) {
-            String count = String.valueOf(check[i]);
-            if (count.equals("X")) {
-                keepNumberX++;
-            }
-            if (count.equals("O")) {
-                keepNumberO++;
-            }
-            if (count.equals("_")) {
-                keepNumberSpace++;
-            }
-        }
-
-
-    }
+//    //counting X and O
+//    static public void countXO(String readXO) {
+//        char[] check = readXO.toCharArray();
+//        for (int i = 0; i < readXO.length(); i++) {
+//            String count = String.valueOf(check[i]);
+//            if (count.equals("X")) {
+//                keepNumberX++;
+//            }
+//            if (count.equals("O")) {
+//                keepNumberO++;
+//            }
+//            if (count.equals("_")) {
+//                keepNumberSpace++;
+//            }
+//        }
+//
+//
+//    }
 
 
     //Printing output
